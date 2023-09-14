@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $(dirname $0)/../
+
+docker compose -f webapp/docker-compose.yml up
