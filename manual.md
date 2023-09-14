@@ -72,52 +72,6 @@ $ sudo systemctl restart isu-ruby
 
 などですることができます。
 
-#### PHPへの切り替え方
-
-起動する実装をPHPに切り替えるには、以下の操作を行います。
-
-```
-$ sudo systemctl stop isu-ruby
-$ sudo systemctl disable isu-ruby
-$ sudo rm /etc/nginx/sites-enabled/isucon.conf
-$ sudo ln -s /etc/nginx/sites-available/isucon-php.conf /etc/nginx/sites-enabled/
-$ sudo systemctl reload nginx
-$ sudo systemctl start php8.1-fpm
-$ sudo systemctl enable php8.1-fpm
-```
-
-php-fpmの設定については、/etc/php/8.1/fpm/以下にあります。
-
-エラーなどの出力については、
-
-```
-$ sudo journalctl -f -u php8.1-fpm
-$ sudo tail -f /var/log/nginx/error.log
-```
-
-などで見ることができます。
-
-#### Goへの切り替え方
-
-起動する実装をGoに切り替えるには、以下の操作を行います。
-
-```
-$ sudo systemctl stop isu-ruby
-$ sudo systemctl disable isu-ruby
-$ sudo systemctl start isu-go
-$ sudo systemctl enable isu-go
-```
-
-プログラムの詳しい起動方法は、 /etc/systemd/system/isu-go.service を参照してください。
-
-エラーなどの出力については、
-
-```
-$ sudo journalctl -f -u isu-go
-```
-
-などで見ることができます。
-
 ### MySQL
 
 3306番ポートでMySQLが起動しています。初期状態では以下のユーザが設定されています。
