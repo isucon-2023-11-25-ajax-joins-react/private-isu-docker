@@ -7,8 +7,8 @@ portal/tmp
 /portal/.bundle
 /portal/vendor/bundle
 
-webapp/logs/nginx/access.log
-webapp/logs/nginx/error.log
+webapp/logs/nginx/*
+webapp/logs/mysql/*
 
 # Ignore the default SQLite database.
 /portal/db/*.sqlite3

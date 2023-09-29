@@ -2,4 +2,4 @@
 
 cd $(dirname $0)/../
 
-docker compose -f webapp/docker-compose.yml $1
+docker compose -f webapp/docker-compose.yml $1 $2
