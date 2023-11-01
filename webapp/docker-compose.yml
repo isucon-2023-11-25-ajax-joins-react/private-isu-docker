@@ -15,7 +15,7 @@ services:
     build: ruby/
     environment:
       ISUCONP_DB_HOST: mysql
-      ISUCONP_DB_PORT: 3306
+      ISUCONP_DB_PORT: 3307
       ISUCONP_DB_USER: root
       ISUCONP_DB_PASSWORD: root
       ISUCONP_DB_NAME: isuconp
@@ -42,8 +42,9 @@ services:
       - mysql:/var/lib/mysql
       - ./etc/my.cnf:/etc/my.cnf
       - ./sql:/docker-entrypoint-initdb.d
+      - ./logs/mysql:/var/log/mysql
     ports:
-      - "3306:3306"
+      - "3307:3306"
     deploy:
       resources:
         limits:
