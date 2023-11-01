@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# 最初の引数をパスワードとして取得
+PASSWORD=$1
+
+cd $(dirname $0)/../
+
+docker exec -it database mysql -u root -p${PASSWORD}
